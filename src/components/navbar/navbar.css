@@ -1,0 +1,11 @@
+.login{
+  border-radius: 4px;
+  background: #480981;
+  color:#fff;
+}
+
+.login :hover{
+transition: all 0.2s ease-in-out;
+background: #fff;
+color: #480981; 
+}
