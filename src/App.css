@@ -22,15 +22,57 @@ h1{
   font-size: 2.5rem;
 }
 
+h2{
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.p{
+  color: #fff;
+  padding-bottom: 40px;
+  padding-left: 20rem;
+  padding-right: 20rem;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
 #logo {
   width: 85px;
   height: 82px;
 }
 
+.botones{
+    text-decoration: none;
+}
 
-.login.hover{
-  color: #884EC6;
-  background-color: transparent;
+.botones:hover{
+    text-decoration: none;
+}
+ 
+.login:hover{
+  color: none ;
+}
+
+.textfield__label{
+  color: aliceblue !important;
+}
+
+.bodySign{
+  background-color:#480981;
+  position: relative;
+  top: 0;
+}
+
+.fondoSign{
+  background-color:#480981 !important;
+}
+
+.contain{
+  background-color:#480981; 
 }
 
 .page-container{
@@ -61,7 +103,3 @@ bottom: 0;
  .Box{
    border-color: #480981;
  }
- 
-.button{
-  background: #480981;
-}

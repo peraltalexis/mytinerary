@@ -28,7 +28,7 @@ const responsive = {
 };
 const CarouselSlider = () => {
     return (
-<Carousel responsive={responsive}itemClass='CarouselStyle'>
+<Carousel responsive={responsive}itemClass='CarouselStyle' >
   <div><img src={litoral} alt='fotoLitoral'></img><TextoSlide className='texto'><p>15% de descuento en pasajes al Litoral</p></TextoSlide></div>
   <div><img src={patagonia} alt='fotoPatagonia'></img><TextoSlide className='texto'><p>15% de descuento en pasajes al Patagonia</p></TextoSlide></div>
   <div><img src={mendoza} alt='fotoMendoza'></img><TextoSlide className='texto'><p>30% de descuento en pasajes al Mendoza</p></TextoSlide></div>

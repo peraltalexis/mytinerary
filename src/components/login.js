@@ -40,72 +40,79 @@ export default function SignIn() {
   };
 
   return (
+    <div className="bodySign">
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            backgroundColor:"#480981",  
+            marginTop: 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main', fontSize:"large" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
+            <TextField className="textfield" InputLabelProps={{className:'textfield__label'}}
               margin="normal"
               required
               fullWidth
               id="email"
               label="Email Address"
+              color="secondary"
               name="email"
               autoComplete="email"
               autoFocus
             />
-            <TextField
+            <TextField className="textfield" InputLabelProps={{className:'textfield__label'}}
               margin="normal"
               required
               fullWidth
               name="password"
               label="Password"
+              color="secondary"
               type="password"
               id="password"
               autoComplete="current-password"
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              sx={{color:"white"}}
+              control={<Checkbox value="remember" sx={{color: "white",'&.Mui-checked': {color: "white",},}} />}
               label="Remember me"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              color="secondary"
+              sx={{ mt: 3, mb: 2, color:"white", backgroundColor:"black" }}
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" sx={{color:"white"}}>
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="signup" variant="body2" sx={{color:"white"}}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        <Copyright sx={{color:"#480981"}} />
       </Container>
     </ThemeProvider>
+    </div>
   );
 }

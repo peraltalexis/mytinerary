@@ -45,7 +45,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            sx={{ mr: 2, cursor:"pointer", display: { xs: 'none', md: 'flex' } }}
           >
           <img src="./mytinerary.png" alt="logo" id="logo"/>
           </Typography>
@@ -80,7 +80,7 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <Link to={"/"+page}>
+                <Link to={"/"+page} style={{textDecoration:"none", color:"#884EC6"}}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
@@ -92,14 +92,15 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            sx={{ flexGrow: 1, cursor:"pointer", display: { xs: 'flex', md: 'none' } }}
           >
            <img src="./mytinerary.png" alt="logo" id="logo"/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link to={"/"+page}>
+              <Link to={"/"+page} style={{textDecoration:"none", color:"#884EC6"}}>
               <Button
+                className= "botones"
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -112,9 +113,9 @@ const ResponsiveAppBar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Button 
-            color="secondary"
+            color="inherit"
             onClick={handleOpenUserMenu}
-            className='login'><AccountCircleOutlinedIcon fontSize= "large"/>                
+            className='login'><AccountCircleOutlinedIcon className='login' fontSize= "large"/>                
             </Button>
             <Menu
               sx={{ mt: '45px' }}
@@ -133,7 +134,7 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                 <Link to={"/"+setting}>
+                 <Link to={"/"+setting} style={{textDecoration:"none", color:"#884EC6"}}>
                 <MenuItem key={setting} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>

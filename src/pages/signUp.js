@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -28,6 +28,8 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+
+
 export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,62 +42,69 @@ export default function SignUp() {
   };
 
   return (
+      <div className="bodySign">
     <ThemeProvider className= "fondoSign" theme={theme}>
-      <Container className= "container" component="main" maxWidth="xs">
+      <Container className= "contain" component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            backgroundColor:"#480981",  
+            marginTop: 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main', fontSize:"large" }}>
+            <AddCircleOutlineOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+          Create your account
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{ borderColor:"white, 2px, solid" }}>
               <Grid item xs={12} sm={6}>
-                <TextField className="Box"
+              
+                <TextField className="textfield" InputLabelProps={{className:'textfield__label'}}
                   autoComplete="given-name"
                   name="firstName"
                   required
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  color="secondary"
                   autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
+                <TextField className="textfield" InputLabelProps={{className:'textfield__label'}}
                   required
                   fullWidth
                   id="lastName"
                   label="Last Name"
+                  color="secondary"
                   name="lastName"
                   autoComplete="family-name"
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <TextField className="textfield" InputLabelProps={{className:'textfield__label'}}
                   required
                   fullWidth
                   id="email"
                   label="Email Address"
+                  color="secondary"
                   name="email"
                   autoComplete="email"
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <TextField className="textfield" InputLabelProps={{className:'textfield__label'}}
                   required
                   fullWidth
                   name="password"
                   label="Password"
+                  color="secondary"
                   type="password"
                   id="password"
                   autoComplete="new-password"
@@ -103,30 +112,33 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  sx={{color:"white"}}
+                  control={<Checkbox value="allowExtraEmails" sx={{color: "white",'&.Mui-checked': {color: "white",},}} />}
+                  label="I want to receive promotions and updates via email."
                 />
               </Grid>
             </Grid>
-            <Button className="button"
+            <Button 
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              color="secondary"
+              sx={{ mt: 3, mb: 2, color:"white", backgroundColor:"black" }}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="signin" variant="body2" sx={{color:"white"}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+        <Copyright sx={{color:"#480981"}} />
       </Container>
     </ThemeProvider>
+    </div>
   );
 }
