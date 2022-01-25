@@ -12,7 +12,7 @@ const homeCard = (
       Why choose Mytinerary for your trip?
       </Typography>
       <Typography variant="body2">
-      Mytinerary is one of the most experienced travel agencies in America, recognized and recommended by thousands of travelers from all over the continent. Take advantage of our travel offers and promotions and travel the world. Buy your trip on Mytinerary from the web, the app or by phone Despegar: 0810 810 9994. Do you have questions or need help? You can call us at any time at the Mytinerary customer service center and travel with the confidence of knowing that we are with you.
+      Mytinerary is one of the most experienced travel agencies in America, recognized and recommended by thousands of travelers from all over the continent. Take advantage of our travel offers and promotions and travel the world. Buy your trip on Mytinerary from the web, the app or by phone Mytinerary: 0810 810 9994. Do you have questions or need help? You can call us at any time at the Mytinerary customer service center and travel with the confidence of knowing that we are with you.
       </Typography>
     </CardContent>
   </React.Fragment>
