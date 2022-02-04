@@ -1,6 +1,6 @@
 import React from 'react';
 import CarouselSlider from '../components/carousel'; 
-import OutlinedCard from '../components/homeCard'
+import OutlinedCard from '../components/homeCard';
 
 const Home = () => {
     return (
@@ -9,7 +9,7 @@ const Home = () => {
             <CarouselSlider />
             <br/>
             <br/>
-            <OutlinedCard sx={{paddinLeft:'20rem', paddingRight:'20rem'}} />
+            <OutlinedCard sx={{paddingLeft:'5rem', paddingRight:'5rem'}} />
             <br/>
             <br/>
         </div>

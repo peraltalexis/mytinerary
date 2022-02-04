@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import './App.css';
 import ResponsiveAppBar from './components/navbar/navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -6,9 +7,20 @@ import Home from './pages/home';
 import Cities from './pages/cities';
 import SignIn from './components/login';
 import SignUp from './pages/signUp';
+import axios from 'axios'
 
 
 function App() {
+
+async function test(){
+  await axios.get("http.localhost:4000/api/datos")
+  .then(response => console.log(response))
+}
+
+useEffect(() => {
+  test() 
+});
+
   return (
     <BrowserRouter>
      <ResponsiveAppBar/>

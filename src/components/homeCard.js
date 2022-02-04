@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 
 const homeCard = (
   <React.Fragment>
-    <CardContent >
+    <CardContent className='cardContent'>
       <Typography sx={{ fontSize: '1.5rem' }} color="text.secondary" gutterBottom>
       Why choose Mytinerary for your trip?
       </Typography>

@@ -1,58 +1,36 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+import React from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-flip"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+
+import "./styles.css";
 
 
-export default function MediaCard() {
-return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            P
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Torre Eiffel"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="./images/paris.jpg"
-        alt="Paris"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-        Also known as the "City of Light" (la Ville lumière), 
-        it is the most popular tourist destination in the world, 
-        with more than 42 million foreign visitors per year. 
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
-    </Card>
-    
-  );
+// import Swiper core and required modules
+import SwiperCore, {
+  EffectFlip,Pagination,Navigation
+} from 'swiper';
+
+import patagonia from '../images/patagonia.jpg';
+
+// install Swiper modules
+SwiperCore.use([EffectFlip,Pagination,Navigation]);
+
+
+export default function App() {
+  
+  
+  
+  return (
+    <>
+    <Swiper effect={'flip'} grabCursor={true} pagination={true} navigation={true} className="mySwiper">
+  <SwiperSlide><img src= {patagonia} alt='fotoPatagonia' /></SwiperSlide><SwiperSlide><img src="https://swiperjs.com/demos/images/nature-2.jpg" /></SwiperSlide><SwiperSlide><img src="https://swiperjs.com/demos/images/nature-3.jpg" /></SwiperSlide><SwiperSlide><img src="https://swiperjs.com/demos/images/nature-4.jpg" /></SwiperSlide><SwiperSlide><img src="https://swiperjs.com/demos/images/nature-5.jpg" /></SwiperSlide><SwiperSlide><img src="https://swiperjs.com/demos/images/nature-6.jpg" /></SwiperSlide>
+  </Swiper>
+    </>
+  )
 }
-
