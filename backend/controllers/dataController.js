@@ -1,4 +1,4 @@
-const Cities = require("../models/cities")
+const Cities = require("../models/cities.js")
 
 const citiesController =  {
     ObtenerTodosLosDatos:async(req,res)=>{

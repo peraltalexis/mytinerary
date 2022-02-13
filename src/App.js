@@ -11,14 +11,17 @@ import axios from 'axios'
 
 
 function App() {
+  const data=[]
 
 async function test(){
-  await axios.get("http.localhost:4000/api/datos")
-  .then(response => console.log(response))
+  await axios.get("http://localhost:4000/api/datos")
+  .then(response => data.push(...response.data.response.cities))
 }
 
+console.log(data)
+
 useEffect(() => {
-  test() 
+  test()
 });
 
   return (
