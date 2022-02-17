@@ -27,6 +27,12 @@ h1{
   justify-content: space-between ;
 }
 
+.MediaCard{
+  margin: 30px;
+  position: absolute;
+
+}
+
 #logo {
   width: 85px;
   height: 82px;

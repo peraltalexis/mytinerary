@@ -15,7 +15,7 @@ function App() {
 
 async function test(){
   await axios.get("http://localhost:4000/api/datos")
-  .then(response => data.push(...response.data.response.cities))
+  .then(response => console.log(response.data.response.cities))//data.push(...response.data.response.cities))
 }
 
 console.log(data)

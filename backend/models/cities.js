@@ -12,6 +12,6 @@ const citiesSchema = new mongoose.Schema({
     img:{type:String, require:true},
 })
 
-const City = mongoose.model("cities",citiesSchema)
+const Cities = mongoose.model("cities",citiesSchema)
 
-module.exports = City;
+module.exports = Cities;
