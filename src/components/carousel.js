@@ -1,10 +1,10 @@
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import litoral from '../images/litoral.jpg' 
-import mendoza from '../images/mendoza.jpg'
-import norte from '../images/norte.jpg'
-import patagonia from '../images/patagonia.jpg';
+import litoral from '../carouselImages/litoral.jpg' 
+import mendoza from '../carouselImages/mendoza.jpg'
+import norte from '../carouselImages/norte.jpg'
+import patagonia from '../carouselImages/patagonia.jpg';
 
 const responsive = {
   superLargeDesktop: {
