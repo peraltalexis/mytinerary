@@ -8,21 +8,24 @@ import Cities from './pages/cities';
 import SignIn from './components/login';
 import SignUp from './pages/signUp';
 import axios from 'axios'
-
+import {actionTypes} from './reducer';
+import {useStateValue} from './StateProvider';
+import Details from './components/details'
 
 function App() {
-  const data=[]
+  const [{cities}, dispatch] = useStateValue() 
 
-async function test(){
-  await axios.get("http://localhost:4000/api/datos")
-  .then(response => console.log(response.data.response.cities))//data.push(...response.data.response.cities))
-}
+ useEffect (()=>{ 
+axios.get("http://localhost:4000/api/datos")
+  .then(response => 
+    dispatch({
+      type: actionTypes.CITIESDB,
+      cities: response.data.response.cities,
+    })
+    )
+    console.log(cities)
+},[])
 
-console.log(data)
-
-useEffect(() => {
-  test()
-});
 
   return (
     <BrowserRouter>
@@ -33,6 +36,7 @@ useEffect(() => {
    <Route path="*" element={<Home/>}/>
    <Route path="/signin" element={<SignIn/>}/>
    <Route path="/signup" element={<SignUp/>}/>
+   <Route path="/details/:id" element={<Details/>}/>
   </Routes>
   <Footer/>
   </BrowserRouter>

@@ -5,29 +5,36 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {Link as LinkRouter} from 'react-router-dom'
 
-export default function MediaCard() {
+
+
+export default function MediaCard(props) {
   return (
+    <div className="wrapper">
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
+        className="cardImage"
         component="img"
-        height="140"
-        image="../images/londres.jpg"
-        alt="londres"
+        image={process.env.PUBLIC_URL + "/images/" + props.city.img}
+        alt="city"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          London
+      <Typography gutterBottom variant="h5" component="div">
+          {props.city.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+        <Typography gutterBottom variant="h5" component="div">
+          {props.city.country}
         </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <LinkRouter to ={'/details/'+ props.city._id}>
+        <Button size="small">Read More</Button>
+        </LinkRouter>
       </CardActions>
     </Card>
+    
+    </div>
   );
 }

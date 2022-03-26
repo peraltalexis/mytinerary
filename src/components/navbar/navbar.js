@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import './navbar.css';
 import { Link } from "react-router-dom";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import logo from './mytinerary1.png'
 
 const pages = ['home', 'cities'];
 const settings = ['signin', 'signup'];
@@ -47,7 +48,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, cursor:"pointer", display: { xs: 'none', md: 'flex' } }}
           >
-          <img src="./mytinerary.png" alt="logo" id="logo"/>
+          <img src={logo} alt="logo" id="logo"/>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -94,7 +95,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, cursor:"pointer", display: { xs: 'flex', md: 'none' } }}
           >
-           <img src="./mytinerary.png" alt="logo" id="logo"/>
+           <img src={logo} alt="logo" id="logo"/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

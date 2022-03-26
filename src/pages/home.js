@@ -5,7 +5,7 @@ import OutlinedCard from '../components/homeCard';
 const Home = () => {
     return (
         <div>
-            <h1>MyTinerary</h1>
+            <h1>Offers in Argentina</h1>
             <CarouselSlider />
             <br/>
             <br/>

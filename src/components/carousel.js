@@ -4,8 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import litoral from '../images/litoral.jpg' 
 import mendoza from '../images/mendoza.jpg'
 import norte from '../images/norte.jpg'
-import patagonia from '../images/patagonia.jpg'
-import styled from 'styled-components'
+import patagonia from '../images/patagonia.jpg';
 
 const responsive = {
   superLargeDesktop: {
@@ -26,18 +25,20 @@ const responsive = {
     items: 1
   }
 };
+
 const CarouselSlider = () => {
     return (
-<Carousel responsive={responsive}itemClass='CarouselStyle' >
-  <div><img src={litoral} alt='fotoLitoral'></img><TextoSlide className='texto'><p>15% discount on tickets to the Litoral</p></TextoSlide></div>
-  <div><img src={patagonia} alt='fotoPatagonia'></img><TextoSlide className='texto'><p>15% discount on tickets to the Patagonia</p></TextoSlide></div>
-  <div><img src={mendoza} alt='fotoMendoza'></img><TextoSlide className='texto'><p>30% discount on tickets to Mendoza</p></TextoSlide></div>
-  <div><img src={norte} alt='fotoNorte'></img><TextoSlide className='texto'><p>2x1 on tickets to the North of Argentina</p></TextoSlide></div>
+<Carousel 
+responsive={responsive} 
+infinite={true}
+draggable={false}
+className='carousel'>
+  <div><img src={litoral} alt='fotoLitoral'></img></div>
+  <div><img src={patagonia} alt='fotoPatagonia'></img></div>
+  <div><img src={mendoza} alt='fotoMendoza'></img></div>
+  <div><img src={norte} alt='fotoNorte'></img></div>
 </Carousel>
     )
 }
-
-const TextoSlide = styled.div`
-`;
 
 export default CarouselSlider;

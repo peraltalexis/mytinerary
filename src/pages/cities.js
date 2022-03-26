@@ -1,12 +1,16 @@
-import React from 'react';
-import Cities from '../components/cards'
+import React from "react";
+import MediaCard from "../components/mediaCard"
+import { useStateValue } from "../StateProvider";
 
-const cities = () => {
-    return (
-        <div>
-            <Cities/>
-        </div>
-    )
+const Cities = () => {
+    const [{cities}, dispatch] = useStateValue ()
+  return (
+      <div>
+         <h1>World Cities</h1> 
+         {cities?.map(city=> 
+         <MediaCard city = {city}/>
+         )}
+      </div>
+  )
 }
-
-export default cities
+export default Cities;

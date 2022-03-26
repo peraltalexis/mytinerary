@@ -20,7 +20,7 @@ const homeCard = (
 
 export default function OutlinedCard1() {
   return (
-    <Box sx={{ minWidth: 275, marginLeft:'20rem', marginRight:'20rem' }}>
+    <Box sx={{ minWidth: 275, marginLeft:'1rem', marginRight:'1rem' }}>
       <Card variant="outlined">{homeCard}</Card>
     </Box>
   );

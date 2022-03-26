@@ -12,6 +12,7 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from 'axios'
 
 function Copyright(props) {
   return (
@@ -40,6 +41,28 @@ export default function SignUp() {
       password: data.get('password'),
     });
   };
+
+  async function nuevoUsuario(event){
+    event.preventDefault()
+    const NuevoUsuario = {firstname: event.target[0].value,
+                         lastname: event.target[2].value,
+                         email: event.target[4].value,
+                        password: event.target[6].value}
+                        
+    await axios.post("http://localhost:4000/api/signup",{NuevoUsuario})
+    .then(response=>//alert(response.data.response))
+  
+      displayMessages(response.data)
+      )
+
+    function displayMessages(data){
+      if(data.success==="falseVAL"){
+        data.response.error.details.map(error=>alert(error.message))
+      }
+
+    }
+    }
+  
 
   return (
       <div className="bodySign">
@@ -115,6 +138,7 @@ export default function SignUp() {
                   sx={{color:"white"}}
                   control={<Checkbox value="allowExtraEmails" sx={{color: "white",'&.Mui-checked': {color: "white",},}} />}
                   label="I want to receive promotions and updates via email."
+                  onSubmit={nuevoUsuario}
                 />
               </Grid>
             </Grid>

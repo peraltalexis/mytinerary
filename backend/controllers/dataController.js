@@ -16,7 +16,15 @@ const citiesController =  {
             success:error?false:true,
             error:error
         })
-    } //(require and response)
+    },
+    obtenerUnaCiudad: async (req, res) => {
+        const id = req.params.id
+        console.log(req.params)
+        try {
+            const city = await Cities.findOne({_id:id})
+            res.json({success:true, response:{city}})
+        }catch (error){console.log (error)}
+    }
 } 
 
 module.exports = citiesController
